@@ -5,7 +5,8 @@ node {
             sh 'npm install'
         }
         stage('Test') { 
-        sh './jenkins/scripts/test.sh' 
+            checkout scm
+            sh './jenkins/scripts/test.sh' 
         }
     }
 }
